@@ -3,8 +3,7 @@ package com.ivanmagda.habito.utils;
 public final class ColorUtils {
 
     public static String parseColorFromInt(int colorInt) {
-        String hexString = Integer.toHexString(colorInt);
-        return  hexString;
+        return Integer.toHexString(colorInt);
     }
 
     private ColorUtils() {
