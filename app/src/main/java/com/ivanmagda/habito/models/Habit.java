@@ -51,6 +51,11 @@ public final class Habit implements Parcelable, Cloneable {
         return new Habit(mId, mRecord.copy());
     }
 
+    @Override
+    public Object clone() {
+        return copy();
+    }
+
     public String getId() {
         return mId;
     }
