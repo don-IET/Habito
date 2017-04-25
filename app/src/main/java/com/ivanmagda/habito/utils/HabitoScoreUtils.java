@@ -68,7 +68,7 @@ public final class HabitoScoreUtils {
 
     private static void removeLastCheckmark(@NonNull final Habit habit) {
         HabitRecord record = habit.getRecord();
-        if (record.getCheckmarks().size() > 0) {
+        if (!record.getCheckmarks().isEmpty()) {
             removeCheckmarkAtIndex(habit, record.getCheckmarks().size() - 1);
         }
     }
