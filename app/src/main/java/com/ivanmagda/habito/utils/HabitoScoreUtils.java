@@ -12,6 +12,8 @@ import java.util.List;
 public final class HabitoScoreUtils {
 
     public static void processAll(@NonNull final List<Habit> habits) {
+        if (habits.isEmpty())
+            return;
         for (Habit habit : habits) {
             if (isNeedToResetScore(habit)) {
                 resetScore(habit);

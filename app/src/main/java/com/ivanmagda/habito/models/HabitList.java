@@ -37,7 +37,12 @@ public final class HabitList {
     private SortOrder mSortOrder;
 
     public HabitList(@NonNull List<Habit> habits, @NonNull SortOrder sortOrder) {
-        this.mHabits = new ArrayList<>(habits);
+        if(habits.isEmpty()){
+            this.mHabits = new ArrayList<>();
+        } else {
+            this.mHabits = new ArrayList<>(habits);
+        }
+
         this.mSortOrder = sortOrder;
         sort();
     }
