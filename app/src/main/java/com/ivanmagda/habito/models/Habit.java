@@ -21,8 +21,8 @@ public final class Habit implements Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public Object clone() {
+        return copy();
     }
 
     public String getId() {
