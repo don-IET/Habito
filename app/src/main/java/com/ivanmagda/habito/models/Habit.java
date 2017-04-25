@@ -20,6 +20,7 @@ public final class Habit implements Cloneable {
         return new Habit(mId, mRecord.copy());
     }
 
+    //dont mess with this
     @Override
     public Object clone() {
         return copy();
