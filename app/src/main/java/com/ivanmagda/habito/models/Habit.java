@@ -1,8 +1,12 @@
 package com.ivanmagda.habito.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.ivanmagda.habito.utils.HabitoScoreUtils;
 
-public final class Habit implements Cloneable {
+//cloneable makes the mess....
+public final class Habit implements Parcelable, Cloneable {
 
     private String mId;
     private HabitRecord mRecord;
@@ -16,14 +20,36 @@ public final class Habit implements Cloneable {
         this.mRecord = record;
     }
 
-    public Habit copy() {
-        return new Habit(mId, mRecord.copy());
+    public Habit(Parcel in) {
+        this.mId = in.readString();
+        this.mRecord = in.readParcelable(HabitRecord.class.getClassLoader());
     }
 
-    //dont mess with this
     @Override
-    public Object clone() {
-        return copy();
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mId);
+        dest.writeParcelable(mRecord, flags);
+    }
+
+    public static final Parcelable.Creator<Habit> CREATOR = new Parcelable.Creator<Habit>() {
+        @Override
+        public Habit createFromParcel(Parcel parcel) {
+            return new Habit(parcel);
+        }
+
+        @Override
+        public Habit[] newArray(int size) {
+            return new Habit[size];
+        }
+    };
+
+    public Habit copy() {
+        return new Habit(mId, mRecord.copy());
     }
 
     public String getId() {
