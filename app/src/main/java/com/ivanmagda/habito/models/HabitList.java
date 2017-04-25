@@ -85,7 +85,7 @@ public final class HabitList {
     }
 
     private void sort() {
-        if (mHabits.size() == 0) return;
+        if (mHabits.isEmpty()) return;
         switch (mSortOrder) {
             case NAME:
                 Collections.sort(mHabits, new SortByName());

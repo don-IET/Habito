@@ -31,7 +31,7 @@ public final class HabitoScoreUtils {
         HabitRecord record = habit.getRecord();
 
         int checkmarksCount = record.getCheckmarks().size();
-        if (checkmarksCount <= 0) return;
+        if (record.getCheckmarks().isEmpty()) return;
 
         long lastCheckmark = record.getCheckmarks().get(checkmarksCount - 1);
         ResetFrequency.Type type = ResetFrequency.typeFrom(record.getResetFreq());
