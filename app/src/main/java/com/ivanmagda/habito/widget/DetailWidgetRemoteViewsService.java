@@ -10,7 +10,7 @@ public class DetailWidgetRemoteViewsService extends RemoteViewsService {
 
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
-        int appWidgetId = intent.getIntExtra(
+        intent.getIntExtra(
                 AppWidgetManager.EXTRA_APPWIDGET_ID,
                 AppWidgetManager.INVALID_APPWIDGET_ID);
         return (new ListProvider(this, intent));

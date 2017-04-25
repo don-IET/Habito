@@ -12,6 +12,8 @@ import java.util.List;
 public final class HabitoScoreUtils {
 
     public static void processAll(@NonNull final List<Habit> habits) {
+        if (habits.isEmpty())
+            return;
         for (Habit habit : habits) {
             if (isNeedToResetScore(habit)) {
                 resetScore(habit);
@@ -29,7 +31,7 @@ public final class HabitoScoreUtils {
         HabitRecord record = habit.getRecord();
 
         int checkmarksCount = record.getCheckmarks().size();
-        if (checkmarksCount <= 0) return;
+        if (record.getCheckmarks().isEmpty()) return;
 
         long lastCheckmark = record.getCheckmarks().get(checkmarksCount - 1);
         ResetFrequency.Type type = ResetFrequency.typeFrom(record.getResetFreq());
@@ -66,7 +68,7 @@ public final class HabitoScoreUtils {
 
     private static void removeLastCheckmark(@NonNull final Habit habit) {
         HabitRecord record = habit.getRecord();
-        if (record.getCheckmarks().size() > 0) {
+        if (!record.getCheckmarks().isEmpty()) {
             removeCheckmarkAtIndex(habit, record.getCheckmarks().size() - 1);
         }
     }
