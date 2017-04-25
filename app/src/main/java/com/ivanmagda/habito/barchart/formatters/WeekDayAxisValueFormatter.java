@@ -12,10 +12,11 @@ import static com.ivanmagda.habito.utils.HabitoDateUtils.getStartOfCurrentWeek;
 
 public class WeekDayAxisValueFormatter extends HabitoBaseIAxisValueFormatter {
 
-    private static SimpleDateFormat FORMATTER = new SimpleDateFormat("EEE", Locale.getDefault());
+    //private static SimpleDateFormat FORMATTER = new SimpleDateFormat("EEE", Locale.getDefault());
 
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
+        SimpleDateFormat FORMATTER = new SimpleDateFormat("EEE", Locale.getDefault());
         return FORMATTER.format(new Date(getDateForValue(value)));
     }
 

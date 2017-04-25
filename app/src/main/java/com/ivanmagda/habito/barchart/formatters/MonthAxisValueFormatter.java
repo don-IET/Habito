@@ -13,10 +13,11 @@ import static com.ivanmagda.habito.utils.HabitoDateUtils.getStartOfWeek;
 
 public final class MonthAxisValueFormatter extends HabitoBaseIAxisValueFormatter {
 
-    private static SimpleDateFormat FORMATTER = new SimpleDateFormat("M/d", Locale.getDefault());
+    //private static SimpleDateFormat FORMATTER = new SimpleDateFormat("M/d", Locale.getDefault());
 
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
+        SimpleDateFormat FORMATTER = new SimpleDateFormat("M/d", Locale.getDefault());
         return FORMATTER.format(getDateForValue(value));
     }
 

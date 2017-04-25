@@ -11,10 +11,11 @@ import static com.ivanmagda.habito.utils.HabitoDateUtils.getCurrentCalendar;
 
 public final class YearAxisValueFormatter extends HabitoBaseIAxisValueFormatter {
 
-    private static SimpleDateFormat FORMATTER = new SimpleDateFormat("MMM", Locale.getDefault());
+    //private static SimpleDateFormat FORMATTER = new SimpleDateFormat("MMM", Locale.getDefault());
 
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
+        SimpleDateFormat FORMATTER = new SimpleDateFormat("MMM", Locale.getDefault());
         String yearString = FORMATTER.format(new Date(getDateForValue(value)));
         return yearString.substring(0, 1);
     }
