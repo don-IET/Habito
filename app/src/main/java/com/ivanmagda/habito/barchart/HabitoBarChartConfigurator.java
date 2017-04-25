@@ -101,7 +101,7 @@ public final class HabitoBarChartConfigurator {
 
     private void setData() {
         List<BarEntry> yValues = mDataSource.getData();
-        final int labelCount = ((int) Math.floor(mDataSource.getMaxValue() / 2)) + 1;
+        final int labelCount = ((int) Math.floor( (double)mDataSource.getMaxValue() / 2.0)) + 1;
 
         YAxis leftAxis = mBarChart.getAxisLeft();
         leftAxis.setLabelCount(labelCount, false);
