@@ -5,7 +5,6 @@ import android.os.Parcelable;
 
 import com.ivanmagda.habito.utils.HabitoScoreUtils;
 
-//cloneable makes the mess....
 public final class Habit implements Parcelable, Cloneable {
 
     private String mId;
