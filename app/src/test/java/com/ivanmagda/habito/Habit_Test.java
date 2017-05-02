@@ -49,6 +49,16 @@ public class Habit_Test {
         assertFalse(h.isReminderOn());
     }
 
+    @Test
+    public void isReminderOn_Test() throws Exception {
+        Habit h = new Habit();
+        HabitRecord hr = new HabitRecord();
+        hr.setReminderHour(11);
+        hr.setReminderMin(11);
+        h.setRecord(hr);
+        assertTrue(h.isReminderOn());
+    }
+
 
 
 
