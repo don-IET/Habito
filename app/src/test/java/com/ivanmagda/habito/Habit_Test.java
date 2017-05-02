@@ -5,7 +5,7 @@ import com.ivanmagda.habito.utils.ColorUtils;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 
 public class Habit_Test {
@@ -20,6 +20,13 @@ public class Habit_Test {
         Habit h = new Habit();
         h.setId("11");
         assertEquals(h.getId(),"11");
+    }
+
+    @Test
+    public void setId_Test() throws Exception {
+        Habit h = new Habit();
+        h.setId("12");
+        assertNotNull(h.getId());
     }
 
 }
