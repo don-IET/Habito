@@ -27,5 +27,12 @@ public class HabitRecord_Test {
         assertEquals(h.copy().getName(),h.getName());
     }
 
+    @Test
+    public void setUserId_Test() throws Exception {
+        HabitRecord h = new HabitRecord();
+        h.setUserId("11");
+        assertEquals(h.getUserId(),"11");
+    }
+
 
 }
