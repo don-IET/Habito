@@ -29,4 +29,12 @@ public class Habit_Test {
         assertNotNull(h.getId());
     }
 
+    @Test
+    public void getRecord_Test() throws Exception {
+        Habit h = new Habit();
+        assertNotNull(h.getRecord());
+    }
+
+    
+
 }
