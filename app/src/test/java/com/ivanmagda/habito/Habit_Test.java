@@ -59,7 +59,4 @@ public class Habit_Test {
         assertTrue(h.isReminderOn());
     }
 
-
-
-
 }
