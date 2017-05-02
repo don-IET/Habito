@@ -14,4 +14,12 @@ public class HabitRecord_Test {
         HabitRecord h = new HabitRecord();
         assertEquals(h.describeContents(),0);
     }
+
+    @Test
+    public void HabitRecordConstructor_Test() throws Exception {
+        HabitRecord h = new HabitRecord();
+        assertNotNull(h);
+    }
+
+
 }
