@@ -43,5 +43,13 @@ public class Habit_Test {
         assertNotNull(h.getRecord());
     }
 
+    @Test
+    public void isReminderOff_Test() throws Exception {
+        Habit h = new Habit();
+        assertFalse(h.isReminderOn());
+    }
+
+
+
 
 }
