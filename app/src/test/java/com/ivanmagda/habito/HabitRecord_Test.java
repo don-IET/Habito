@@ -21,5 +21,11 @@ public class HabitRecord_Test {
         assertNotNull(h);
     }
 
+    @Test
+    public void copy_Test() throws Exception {
+        HabitRecord h = new HabitRecord();
+        assertEquals(h.copy().getName(),h.getName());
+    }
+
 
 }
