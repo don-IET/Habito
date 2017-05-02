@@ -34,5 +34,11 @@ public class HabitRecord_Test {
         assertEquals(h.getUserId(),"11");
     }
 
+    @Test
+    public void setCreatedAt_Test() throws Exception {
+        HabitRecord h = new HabitRecord();
+        h.setCreatedAt(11);
+        assertEquals(h.getCreatedAt(),11);
+    }
 
 }
