@@ -48,4 +48,11 @@ public class HabitRecord_Test {
         assertEquals(h.getName(),"TestName");
     }
 
+    @Test
+    public void setColor_Test() throws Exception {
+        HabitRecord h = new HabitRecord();
+        h.setColor(11);
+        assertEquals(h.getColor(),11);
+    }
+
 }
