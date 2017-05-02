@@ -1,6 +1,7 @@
 package com.ivanmagda.habito;
 
 import com.ivanmagda.habito.models.Habit;
+import com.ivanmagda.habito.models.HabitRecord;
 import com.ivanmagda.habito.utils.ColorUtils;
 
 import org.junit.Test;
@@ -35,6 +36,12 @@ public class Habit_Test {
         assertNotNull(h.getRecord());
     }
 
-    
+    @Test
+    public void setRecord_Test() throws Exception {
+        Habit h = new Habit();
+        h.setRecord(new HabitRecord());
+        assertNotNull(h.getRecord());
+    }
+
 
 }
